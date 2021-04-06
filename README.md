@@ -8,7 +8,7 @@
 
 1. 设置UUID: 修改 `/boot/extlinux/extlinux.conf`, 将`根目录的标识符` 替换为上面找到的UUID
 
-1. 设置网卡地址 : 找出 `/boot/uEnv.ini` 里面的 `ethaddr=` 后面的网卡地址, 然后编辑 `/etc/systemd/network/20-wired.network` (有线网卡的配置文件), 在[Link] 下方添加一行 MACAddress=`网卡地址`, 修改后这个文件最后的这部分看起来是这样的
+1. 设置网卡地址 : 随便在线生成一个网卡地址, 分隔符形式为冒号 (:), 然后编辑 `/etc/systemd/network/20-wired.network` (有线网卡的配置文件), 在[Link] 下方添加一行 MACAddress=`网卡地址`, 修改后这个文件最后的这部分看起来是这样的
     ````
     [Link]
     MACAddress=网卡地址
