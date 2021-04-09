@@ -2,11 +2,11 @@
 
 1. 下载 : `git clone https://github.com/cattyhouse/new-uboot-for-N1 && cd new-uboot-for-N1`
 
-1. 复制 : 把本目录所有文件复制到 /boot, 遇到有重复的, 就覆盖. `sudo cp -af * /boot/`
+1. 复制 : 把本目录所有文件复制到 /boot, 遇到有重复的, 就覆盖. `sudo cp -rf * /boot/`
 
 1. 找UUID : 找出 根目录的 的 UUID, 命令: `lsblk -f | grep -w '/' | xargs | cut -d ' ' -f4`
 
-1. 设置UUID: 修改 `/boot/extlinux/extlinux.conf`, 将`根目录的标识符` 替换为上面找到的UUID
+1. 设置UUID: 修改 `/boot/extlinux/extlinux.conf`, 将`root_uuid` 替换为上面找到的UUID
 
 1. 设置网卡地址 : 随便在线生成一个网卡地址, 分隔符形式为冒号 (:), 然后编辑 `/etc/systemd/network/20-wired.network` (有线网卡的配置文件), 在[Link] 下方添加一行 MACAddress=`网卡地址`, 修改后这个文件最后的这部分看起来是这样的
     ````
