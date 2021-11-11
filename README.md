@@ -4,7 +4,7 @@
 
 1. 复制 : 把本目录所有文件复制到 /boot, 遇到有重复的, 就覆盖. `sudo cp -rf * /boot/`
 
-1. 找UUID : 找出 根目录的 的 UUID, 命令: `lsblk -f | grep -w '/' | xargs | cut -d ' ' -f4`
+1. 找UUID : 找出 根目录的 的 UUID, 命令: `lsblk -f -o UUID,MOUNTPOINT | grep -w '/' | cut -d' ' -f1`
 
 1. 设置UUID: 修改 `/boot/extlinux/extlinux.conf`, 将`root_uuid` 替换为上面找到的UUID
 
