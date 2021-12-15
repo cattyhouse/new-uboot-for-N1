@@ -8,16 +8,6 @@
 
 1. 设置UUID: 修改 `/boot/extlinux/extlinux.conf`, 将`root_uuid` 替换为上面找到的UUID
 
-1. 设置网卡地址 : 随便在线生成一个网卡地址, 分隔符形式为冒号 (:), 然后编辑 `/etc/systemd/network/20-wired.network` (有线网卡的配置文件), 在[Link] 下方添加一行 MACAddress=`网卡地址`, 修改后这个文件最后的这部分看起来是这样的
-    ````
-    [Link]
-    MACAddress=网卡地址
-    ## set to yes to disable this network
-    Unmanaged=no
-
-    ````
-    >注意: 前提是用的 systemd-networkd 配置的网络, 至于其他的方式配置的自行搜索如何在开机的时候设置网卡地址
-
 1. 重启, 就可以用新的uboot启动当前的内核了.
 
 # 其他补充
