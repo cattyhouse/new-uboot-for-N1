@@ -10,18 +10,7 @@
 
 1. 重启, 就可以用新的uboot启动当前的内核了.
 
-# 其他补充
-
-1. 我编译的内核下载地址: https://kr1.us.to/kernel/
-
-1. 安装新的内核 比如 
-
-`pacman -U linux-phicomm-n1-5.15.8-1-aarch64.pkg.tar.zst linux-phicomm-n1-headers-5.15.8-1-aarch64.pkg.tar.zst`
-
-3. 注意, 我这个内核只能用这个 uboot 启动, n1 原装的 uboot 无法启动. 
-
-
-# **额外补充**
+# **实现过程**
 
 当插入 2 个 USB 设备的时候, USB 启动变得随机, 原因是:
 
